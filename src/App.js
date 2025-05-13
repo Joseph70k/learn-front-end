@@ -1,8 +1,23 @@
+import { useState } from 'react';
+
+
+
 export default function MyApp() {
+  const [count, setCount] = useState(0);
+
+function handleAlertClick() {
+    alert('You clicked the button!');
+  }
+
+function handleClick() {
+  setCount(count + 1);
+}
+
   return (
     <div>
       <h1>Welcome to my app!</h1>
-      <MyButton />
+       <MyButton label="Click me (alert)" onClick={handleAlertClick} />
+       <MyButton label={`Clicked ${count} times`} onClick={handleClick} />
       <AboutPage />
        <Profile />
        <ShoppingList />
@@ -10,10 +25,10 @@ export default function MyApp() {
   );
 }
 
-function MyButton() {
+function MyButton({ label, onClick }) {
   return (
-    <button onClick={() => alert('You clicked the button!')}>
-      Click me
+    <button onClick={onClick}>
+      {label}
     </button>
   );
 }
