@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [selectedRegion, setSelectedRegion] = useState({
+    locale: 'en-US',
+    timeZone: 'America/New_York'
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
