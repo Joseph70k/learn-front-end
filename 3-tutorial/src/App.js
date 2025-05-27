@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -17,8 +17,7 @@ function App() {
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'Arial' }}>
-      <h1>🕒 Current Time</h1>
-
+      <h1>🌐 World Clock</h1>
       <p>Select a city to view the current time in that location:</p>
 
       <select
@@ -35,16 +34,16 @@ function App() {
       </select>
 
       <h2>
-  {currentTime.toLocaleTimeString(selectedRegion.locale, {
-    timeZone: selectedRegion.timeZone,
-  })}
-</h2>
+        {currentTime.toLocaleTimeString(selectedRegion.locale, {
+          timeZone: selectedRegion.timeZone,
+        })}
+      </h2>
 
-<h3>
-  {currentTime.toLocaleDateString(selectedRegion.locale, {
-    timeZone: selectedRegion.timeZone,
-  })}
-</h3>
+      <h3>
+        {currentTime.toLocaleDateString(selectedRegion.locale, {
+          timeZone: selectedRegion.timeZone,
+        })}
+      </h3>
     </div>
   );
 }
