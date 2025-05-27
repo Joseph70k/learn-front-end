@@ -8,7 +8,6 @@ function App() {
       setCurrentTime(new Date());
     }, 1000);
 
-    // Clean up the timer when the component unmounts
     return () => clearInterval(timer);
   }, []);
 
