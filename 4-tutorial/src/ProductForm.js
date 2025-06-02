@@ -6,21 +6,58 @@ function ProductForm({ product, setProduct }) {
     setProduct({ ...product, [name]: value });
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProduct({
+        ...product,
+        image: file,
+        imageUrl: URL.createObjectURL(file),
+      });
+    }
+  };
+
   return (
-    <div>
+    <div style={{ flex: 1 }}>
       <h2>Product Registration</h2>
 
       <label>Product Name:</label><br />
-      <input type="text" name="name" value={product.name} onChange={handleChange} /><br />
+      <input
+        type="text"
+        name="name"
+        value={product.name}
+        onChange={handleChange}
+        style={{ marginBottom: '10px' }}
+      /><br />
 
       <label>Price:</label><br />
-      <input type="number" name="price" value={product.price} onChange={handleChange} /><br />
+      <input
+        type="number"
+        name="price"
+        value={product.price}
+        onChange={handleChange}
+        style={{ marginBottom: '10px' }}
+      /><br />
 
       <label>Category:</label><br />
-      <input type="text" name="category" value={product.category} onChange={handleChange} /><br />
+      <input
+        type="text"
+        name="category"
+        value={product.category}
+        onChange={handleChange}
+        style={{ marginBottom: '10px' }}
+      /><br />
 
       <label>Description:</label><br />
-      <textarea name="description" value={product.description} onChange={handleChange} /><br />
+      <textarea
+        name="description"
+        value={product.description}
+        onChange={handleChange}
+        style={{ marginBottom: '10px', width: '100%' }}
+      /><br />
+
+      <label>Image:</label><br />
+      <input type="file" accept="image/*" onChange={handleImageChange} />
     </div>
   );
 }
