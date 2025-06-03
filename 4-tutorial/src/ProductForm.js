@@ -57,7 +57,17 @@ function ProductForm({ product, setProduct }) {
       /><br />
 
       <label>Image:</label><br />
-      <input type="file" accept="image/*" onChange={handleImageChange} />
+      <input type="file" accept="image/*" onChange={handleImageChange} /><br />
+
+      {product.imageUrl && (
+        <div style={{ marginTop: '10px' }}>
+          <button onClick={() => {
+            setProduct({ ...product, image: null, imageUrl: '' });
+          }}>
+            Remove Image
+          </button>
+        </div>
+      )}
     </div>
   );
 }
