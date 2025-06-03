@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ProductForm from './ProductForm';
+import ProductPreview from './ProductPreview';
 
 function App() {
   const [product, setProduct] = useState({
@@ -11,8 +13,9 @@ function App() {
   });
 
   return (
-    <div>
-      <h1>Product Form Preview App</h1>
+    <div style={{ display: 'flex', padding: '40px' }}>
+      <ProductForm product={product} setProduct={setProduct} />
+      <ProductPreview product={product} />
     </div>
   );
 }
