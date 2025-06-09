@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PostBox from '../components/PostBox';
 
+
 function Posts() {
   const [posts, setPosts] = useState([]);
 
