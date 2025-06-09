@@ -1,4 +1,5 @@
 import '../App.css';
+import PostBox from '../components/PostBox';
 
 const dummyPosts = [
   {
@@ -27,11 +28,12 @@ function Posts() {
       <h2>All Posts</h2>
       <div className="post-list">
         {dummyPosts.map((post) => (
-          <div key={post.id} className="post-card">
-            <h3>{post.title}</h3>
-            <p>{post.description}</p>
-            <p><strong>{post.price}</strong></p>
-          </div>
+          <PostBox
+            key={post.id}
+            title={post.title}
+            description={post.description}
+            price={post.price}
+          />
         ))}
       </div>
     </div>
