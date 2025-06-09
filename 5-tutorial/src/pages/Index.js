@@ -1,18 +1,24 @@
 import '../App.css';
+import { useNavigate } from 'react-router-dom';
 
 function Index() {
-  return (
-    <div className="index-page">
-      <h1>Welcome to BYU&Sale!</h1>
-      <p>This is a simple buy-and-sell platform made using React.</p>
+  const navigate = useNavigate();
 
-      <section className="index-section">
-        <h2>Technologies Used</h2>
-        <ul>
-          <li>React</li>
-          <li>React Router DOM</li>
-        </ul>
-      </section>
+  const goToPosts = () => {
+    navigate("/posts");
+  };
+
+  return (
+    <div className="index-wrapper">
+      <h2 className="welcome-heading">Welcome to Buy & Sale!</h2>
+
+      <div className="index-container">
+        <div className="index-card">
+          <h3>This is my main page!</h3>
+          <p>List your item or contact the seller!</p>
+          <button className="index-button" onClick={goToPosts}>View Posts</button>
+        </div>
+      </div>
     </div>
   );
 }
