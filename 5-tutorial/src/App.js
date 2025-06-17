@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Index from "./pages/Index";
 import Posts from "./pages/Posts";
+import Signup from './pages/Signup';
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </main>
 
