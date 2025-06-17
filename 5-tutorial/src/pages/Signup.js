@@ -19,7 +19,7 @@ function Signup() {
 
   return (
     <div className="auth-page">
-      <h2>Sign Up</h2>
+      <h2 className="form-title">Sign Up</h2>
       <form onSubmit={handleSignup} className="auth-form">
         <input
           type="email"
